@@ -7,10 +7,9 @@ const UpdateUserForm = (id) => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newAge, setNewAge] = useState("");
-  const [newImage, setNewImage] = useState("");
+  const [newImage, setNewImage] = useState("https://picsum.photos/200/300");
 
-  const user = useSelector((state) => state.user.value);
-  console.log(user);
+  const userList = useSelector((state) => state.user.value);
 
   const dispatch = useDispatch();
 
@@ -18,7 +17,7 @@ const UpdateUserForm = (id) => {
     console.log("UPDATE");
     dispatch(
       updateUser({
-        id: user.id,
+        id: id,
         name: newName,
         email: newEmail,
         age: newAge,
@@ -27,32 +26,34 @@ const UpdateUserForm = (id) => {
     );
   };
   return (
-    <div className="user__updateBlock menu__hide">
-      <form>
-        <input
-          type="text"
-          placeholder="Update User Name"
-          onChange={(e) => setNewName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Update User Email"
-          onChange={(e) => setNewEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Update Age"
-          onChange={(e) => setNewAge(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Update Profile Picture"
-          onChange={(e) => setNewImage(e.target.value)}
-        />
-        <button type="submit" onClick={() => handleUpdate(id)}>
-          Save Updates
-        </button>
-      </form>
+    <div className="user__updateBlock">
+      {userList.map((user) => (
+        <form>
+          <input
+            type="text"
+            placeholder="Update User Name"
+            onChange={(e) => setNewName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Update User Email"
+            onChange={(e) => setNewEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Update Age"
+            onChange={(e) => setNewAge(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Update Profile Picture"
+            onChange={(e) => setNewImage(e.target.value)}
+          />
+          <button type="submit" onClick={() => handleUpdate(user.id)}>
+            Save Updates
+          </button>
+        </form>
+      ))}
     </div>
   );
 };
