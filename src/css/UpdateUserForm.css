@@ -1,0 +1,14 @@
+.user__updateBlock {
+  width: 100%;
+}
+
+.user__updateBlock > form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > input {
+  padding: 5px 20px;
+  margin-block: 5px;
+  font-size: 1.2rem;
+}

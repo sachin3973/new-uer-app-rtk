@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid white;
+  padding: 5rem;
+  border-radius: 10px;
+  max-height: 80%;
+}
+
+.profile__img {
+  border: 5px solid white;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+h3 {
+  margin-bottom: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.userinfo {
+  margin-top: 20px;
+}

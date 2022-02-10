@@ -1,0 +1,19 @@
+.navbar__container {
+  background-color: #f0ffff2a;
+  width: 100%;
+  border: 1px solid white;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.navbar__container > ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+a > li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+}
