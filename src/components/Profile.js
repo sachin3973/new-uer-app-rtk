@@ -11,6 +11,7 @@ const Profile = () => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
+    console.log(id);
     dispatch(deleteUser({ id }));
   };
 

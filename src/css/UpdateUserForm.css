@@ -12,3 +12,7 @@ form > input {
   margin-block: 5px;
   font-size: 1.2rem;
 }
+
+.menu__hide {
+  display: none;
+}

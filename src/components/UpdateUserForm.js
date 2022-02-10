@@ -3,16 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../features/user";
 import "../css/UpdateUserForm.css";
 
-const UpdateUserForm = () => {
+const UpdateUserForm = (id) => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newAge, setNewAge] = useState("");
   const [newImage, setNewImage] = useState("");
 
   const user = useSelector((state) => state.user.value);
+  console.log(user);
+
   const dispatch = useDispatch();
 
-  const handleUpdate = () => {
+  const handleUpdate = (id) => {
+    console.log("UPDATE");
     dispatch(
       updateUser({
         id: user.id,
@@ -24,8 +27,8 @@ const UpdateUserForm = () => {
     );
   };
   return (
-    <div className="user__updateBlock">
-      <form onSubmit={() => handleUpdate()}>
+    <div className="user__updateBlock menu__hide">
+      <form>
         <input
           type="text"
           placeholder="Update User Name"
@@ -46,8 +49,8 @@ const UpdateUserForm = () => {
           placeholder="Update Profile Picture"
           onChange={(e) => setNewImage(e.target.value)}
         />
-        <button type="submit" onClick={() => handleUpdate}>
-          Submit
+        <button type="submit" onClick={() => handleUpdate(id)}>
+          Save Updates
         </button>
       </form>
     </div>

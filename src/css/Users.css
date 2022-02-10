@@ -24,3 +24,9 @@
   border: 5px solid white;
   border-radius: 50%;
 }
+
+.show_updateMenu {
+  position: relative;
+  width: 80px;
+  margin-top: 0px;
+}

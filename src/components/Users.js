@@ -9,7 +9,6 @@ const Users = () => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    console.log(id);
     dispatch(deleteUser({ id }));
   };
 
@@ -17,6 +16,7 @@ const Users = () => {
     <div className="users__container">
       {userList.map((user) => (
         <div className="singleuser__container">
+          <button className="show_updateMenu">Edit</button>
           <img className="userList__img" src={user.image} alt="" />
           <div className="userinfo">
             <h3>Name:{user.name}</h3>
