@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../features/user";
 import "../css/UpdateUserForm.css";
 
-const UpdateUserForm = (id) => {
+const UpdateUserForm = () => {
   const [newName, setNewName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newAge, setNewAge] = useState("");
@@ -11,9 +11,15 @@ const UpdateUserForm = (id) => {
 
   const userList = useSelector((state) => state.user.value);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    // pass
+  });
 
-  const handleUpdate = (id) => {
+  const dispatch = useDispatch();
+  console.log(userList);
+
+  const handleUpdate = (id, event) => {
+    event.preventDefault();
     console.log("UPDATE");
     dispatch(
       updateUser({
@@ -26,7 +32,7 @@ const UpdateUserForm = (id) => {
     );
   };
   return (
-    <div className="user__updateBlock">
+    <div className="user__updateBlock menu__hide">
       {userList.map((user) => (
         <form>
           <input
@@ -49,7 +55,10 @@ const UpdateUserForm = (id) => {
             placeholder="Update Profile Picture"
             onChange={(e) => setNewImage(e.target.value)}
           />
-          <button type="submit" onClick={() => handleUpdate(user.id)}>
+          <button
+            type="submit"
+            onClick={(event) => handleUpdate(user.id, event)}
+          >
             Save Updates
           </button>
         </form>

@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialStateValue = [
-  // {
-  //   id: 1,
-  //   name: "John",
-  //   email: "Doe",
-  //   age: 25,
-  //   image:
-  //     "https://www.nari-icmr.res.in/UploadedFilesRepository/39ff71e1-c25a-0961-f598-f423d212cfa8.jpg",
-  // },
-  // {
-  //   id: 2,
-  //   name: "Sachin",
-  //   email: "Sharma",
-  //   age: 22,
-  //   image:
-  //     "https://www.nari-icmr.res.in/UploadedFilesRepository/39ff71e1-c25a-0961-f598-f423d212cfa8.jpg",
-  // },
+  {
+    id: 1,
+    name: "John",
+    email: "Doe",
+    age: 25,
+    image:
+      "https://www.nari-icmr.res.in/UploadedFilesRepository/39ff71e1-c25a-0961-f598-f423d212cfa8.jpg",
+  },
+  {
+    id: 2,
+    name: "Sachin",
+    email: "Sharma",
+    age: 22,
+    image:
+      "https://www.nari-icmr.res.in/UploadedFilesRepository/39ff71e1-c25a-0961-f598-f423d212cfa8.jpg",
+  },
 ];
 
 export const userSlice = createSlice({
@@ -36,6 +36,7 @@ export const userSlice = createSlice({
           user.age = action.payload.age;
           user.image = action.payload.image;
         }
+        return user;
       });
     },
   },
