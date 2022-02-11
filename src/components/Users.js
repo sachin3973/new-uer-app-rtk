@@ -32,7 +32,13 @@ const Users = () => {
             <h3>Age:{user.age}</h3>
           </div>
           <div className="user__updateBlock">
-            <UpdateUserForm id={user.id} />
+            <UpdateUserForm
+              id={user.id}
+              name={user.name}
+              email={user.email}
+              age={user.age}
+              image={user.image}
+            />
           </div>
           <button onClick={() => handleDelete(user.id)}>Delete User</button>
         </div>
