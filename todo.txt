@@ -1,0 +1,2 @@
+> Make login button to redirect to current user profile page
+> Make edit button show the input menu on uerlist and 
